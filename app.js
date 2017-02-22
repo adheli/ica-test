@@ -24,13 +24,20 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 // Javascript preprocessing
 var browserify = require('browserify-middleware');
-app.get('/javascripts/client.js', browserify(path.join(__dirname, 'public', 'javascripts', 'main.js')));
+app.get('/javascripts/client.js', 
+  browserify(path.join(__dirname, 'public', 'javascripts', 'main.js'),
+    {
+      debug: true
+    }
+  )
+);
 
 app.use('/', index);
 app.use('/products', products);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
+  console.log(err);
   var err = new Error('Not Found');
   err.status = 404;
   next(err);

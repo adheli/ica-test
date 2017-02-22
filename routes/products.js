@@ -4,6 +4,10 @@ var router = express.Router();
 
 var products = database.products;
 
+router.use((req, res, next) => {
+  setTimeout(next, 1000);
+});
+
 /* GET products */
 router.get('/', function(req, res, next) {
   res.send('respond with a resource');

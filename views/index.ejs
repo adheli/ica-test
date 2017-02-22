@@ -5,15 +5,20 @@
     <link rel='stylesheet' href='/stylesheets/style.css' />
     <script src='/javascripts/client.js'></script>
   </head>
-  <body ng-app='icaApp'>
+  <body ng-app='icaApp' ng-controller="appController as app">
     <md-toolbar>
       <h2 class="md-toolbar-tools">
         <span><%= title %></span>
       </h2>
     </md-toolbar>
 
-    <md-content>
-      <md-button>test</md-button>
+    <div style="height: 5px">
+      <md-progress-linear ng-show="loading" md-mode="indeterminate"></md-progress-linear>
+    </div>
+
+    <md-content layout layout-align="center">
+      <md-button flex="none" ng-click="getProducts()">Get Products</md-button>
     </md-content>
+
   </body>
 </html>
