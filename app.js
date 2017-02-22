@@ -5,9 +5,6 @@ var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 
-// var db = new loki('./database.json');
-
-
 var index = require('./routes/index');
 var products = require('./routes/products');
 

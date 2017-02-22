@@ -1,5 +1,8 @@
+var database = require('../database');
 var express = require('express');
 var router = express.Router();
+
+var products = database.products;
 
 /* GET products */
 router.get('/', function(req, res, next) {
