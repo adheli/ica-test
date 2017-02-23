@@ -25,23 +25,23 @@ If you want to see debug messages, use `DEBUG=ica-test:server:* npm start` inste
 
 2. Implement client-side buttons for editing products in the following behaviour:
 
-- An edit button in every item of the list
-- Upon clicking the button, the user will be prompted (using any method) for a new name
-- After confirming this new name, implement and call the controller method using the appService
-- The updated item should be retrievable when you click on GET PRODUCTS button
-- *Plus:* Update the item inside the list automatically
+  - An edit button in every item of the list
+  - Upon clicking the button, the user will be prompted (using any method) for a new name
+  - After confirming this new name, implement and call the controller method using the appService
+  - The updated item should be retrievable when you click on GET PRODUCTS button
+  - *Plus:* Update the item inside the list automatically
 
 3. Implement client-side buttons for deleting products in the following behaviour:
 
-- A delete button in every item of the list
-- Upon clicking the button, the user must confirm his choice (using any method) to either confirm or cancel the operation
-- After confirming, implement and call the controller method using the using the appService
-- The deleted item should be gone once your click on GET PRODUCTS button
-- *Plus:* Delete the item inside the list automatically
+  - A delete button in every item of the list
+  - Upon clicking the button, the user must confirm his choice (using any method) to either confirm or cancel the operation
+  - After confirming, implement and call the controller method using the using the appService
+  - The deleted item should be gone once your click on GET PRODUCTS button
+  - *Plus:* Delete the item inside the list automatically
 
 4. *OPTIONAL:* Create a new route to retrieve the list of products ordered by name alphabetically. *Plus:* Change the `GET /products` instead to support a `sortBy` argument
 
 5. *OPTIONAL PLUS:* Implement pagination using the `offset` and `limit` options:
-- Bring only the first 5 items, then have a `Load More` button
-- When clicking this button, load 5 more items until all of them are loaded
-- Upon reaching the limit AND when loading, make the `Load More` button disabled or hidden
+  - Bring only the first 5 items, then have a `Load More` button
+  - When clicking this button, load 5 more items until all of them are loaded
+  - Upon reaching the limit AND when loading, make the `Load More` button disabled or hidden
