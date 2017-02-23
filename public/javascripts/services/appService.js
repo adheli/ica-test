@@ -7,7 +7,7 @@ angular
 function appService($http) {
   return {
     list: list,
-    add: add,
+    create: create,
     edit: edit,
     remove: remove
   }
@@ -15,20 +15,28 @@ function appService($http) {
   function list() {
     return $http.get("/products")
     .then(response => {
-      console.log(response);
-      return [];
+      return response.data;
     });
   }
 
-  function add() {
-
+  function create(product) {
+    return $http.post("/products")
+    .then(response => {
+      return response.data;
+    });
   }
 
-  function edit() {
-
+  function edit(product) {
+    return $http.put("/products/"+product.id)
+    .then(response => {
+      return response.data;
+    });
   }
 
-  function remove() {
-
+  function remove(product) {
+    return $http.put("/products/"+product.id)
+    .then(response => {
+      return response.data;
+    });
   }
 }

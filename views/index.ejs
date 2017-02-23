@@ -20,5 +20,38 @@
       <md-button flex="none" ng-click="getProducts()">Get Products</md-button>
     </md-content>
 
+    <md-list>
+      <md-list-item class="md-2-line" ng-repeat="product in products" ng-href="#">
+        <div class="md-list-item-text" layout="column">
+          <h3>{{product.title}}</h3>
+          <p>{{product.description}}</p>
+        </div>
+        <md-divider ng-if="!$last"></md-divider>
+      </md-list-item>
+    </md-list>
+
+
+    <div layout>
+      <span flex="20"></span>
+      <form flex="80" ng-submit="addProduct(product)" md-theme="docs-dark" layout="column" layout-align="center">
+        <h1>New product</h1>
+
+        <md-input-container>
+          <label>Title</label>
+          <input ng-model="product.title">
+        </md-input-container>
+
+        <md-input-container>
+          <label>Description</label>
+          <input ng-model="product.description">
+        </md-input-container>
+
+        <div layout="row" layout-align="center">
+          <md-button type="submit" flex="40" class="md-raised md-accent" ng-disabled="userForm.$invalid">ADD PRODUCT</md-button>
+        </div>
+      </form>
+      <span flex="20"></span>
+    </div>
+
   </body>
 </html>

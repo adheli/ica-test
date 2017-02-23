@@ -10,22 +10,25 @@ router.use((req, res, next) => {
 
 /* GET products */
 router.get('/', function(req, res, next) {
-  res.send('respond with a resource');
+  res.send(products);
 });
 
 /* POST new product */
 router.post('/', function(req, res, next) {
-  
+  res.status(404);
+  res.send("to be implemented");
 });
 
 /* PUT update product */
 router.put('/:id', function(req, res, next) {
-  
+  res.status(404);
+  res.send("to be implemented");
 });
 
 /* DELETE delete product */
 router.delete('/:id', function(req, res, next) {
-
+  res.status(404);
+  res.send("to be implemented");
 });	
 
 module.exports = router;
