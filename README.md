@@ -22,6 +22,7 @@ If you want to see debug messages, use `DEBUG=ica-test:server:* npm start` inste
 # Methods implemented
 Implement the algorithm inside routes/products.js for creating, updating and deleting products.
   - DONE
+
 Implement client-side buttons for editing products in the following behaviour:
 * An edit button in every item of the list
     - DONE
@@ -48,11 +49,14 @@ Implement client-side buttons for deleting products in the following behaviour:
 
 OPTIONAL: Create a new route to retrieve the list of products ordered by name alphabetically.
   - DONE
+
 Plus: Change the GET /products instead to support a sortBy argument
   - NOT IMPLEMENTED
+
 OPTIONAL PLUS: Implement pagination using the offset and limit options:
   - NOT IMPLEMENTED
-Bring only the first 5 items, then have a Load More button
-When clicking this button, load 5 more items until all of them are loaded
-Upon reaching the limit AND when loading, make the Load More button disabled or hidden
+
+* Bring only the first 5 items, then have a Load More button
+* When clicking this button, load 5 more items until all of them are loaded
+* Upon reaching the limit AND when loading, make the Load More button disabled or hidden
 
