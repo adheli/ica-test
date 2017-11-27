@@ -63,21 +63,37 @@ function appController(appService, $scope, $rootScope, $timeout, $window, $mdToa
 			});
 	};
 
-	$scope.removeProduct = (product) => {
+	$scope.removeProduct = (product, ev) => {
 		$scope.loading = true;
 
-		return appService
-			.remove(product)
-			.then((products) => {
-				$scope.products = products;
-				$mdToast.show($mdToast.simple().textContent('Product removed'));
-			})
-			.catch((err) => {
-				$mdToast.show($mdToast.simple().textContent(err));
-			})
-			.finally(() => {
-				$scope.loading = false;
-			});
+		var confirm = $mdDialog
+			.confirm()
+			.title('Are you sure you want to delete this product?')
+			.textContent('No chance to get that back.')
+			.ariaLabel('Remove that!')
+			.targetEvent(ev)
+			.ok('Remove!')
+			.cancel('Cancel');
+
+		$mdDialog.show(confirm).then(
+			function() {
+				return appService
+					.remove(product)
+					.then((products) => {
+						$scope.products = products;
+						$mdToast.show($mdToast.simple().textContent('Product removed'));
+					})
+					.catch((err) => {
+						$mdToast.show($mdToast.simple().textContent(err));
+					})
+					.finally(() => {
+						$scope.loading = false;
+					});
+			},
+			function() {
+				$mdToast.show($mdToast.simple().textContent('Operation canceled'));
+			}
+		);
 	};
 
 	$scope.editProduct = function(productEdit, ev) {
@@ -110,7 +126,9 @@ function appController(appService, $scope, $rootScope, $timeout, $window, $mdToa
 						$scope.loading = false;
 					});
 			},
-			function() {}
+			function() {
+				$mdToast.show($mdToast.simple().textContent('Operation canceled'));
+			}
 		);
 	};
 }

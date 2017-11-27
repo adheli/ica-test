@@ -39,7 +39,7 @@ Implement client-side buttons for deleting products in the following behaviour:
 * A delete button in every item of the list
     - DONE
 * Upon clicking the button, the user must confirm his choice (using any method) to either confirm or cancel the operation
-    - NEED THE CONFIRMATION
+    - DONE
 * After confirming, implement and call the controller method using the using the appService
     - DONE
 * The deleted item should be gone once your click on GET PRODUCTS button
